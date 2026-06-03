@@ -48,8 +48,25 @@ class TaskQueue:
         for i, task in enumerate(self.queue, 1):
             print(f"{i}. {task}")
 
+    def get_task_by_priority(self, target_priority):
+        if self.is_empty():
+            print("Очередь пуста.")
+            return []
 
+        found_tasks = []
+        for task in self.queue:
+            if task.priority == target_priority:
+                found_task.appened(task)
 
+        if found_tasks:
+            print(f"\nНайдено задач с приоритетом {target_priority}: {len(found_tasks)}.")
+            for i, task in enumerate(found_tasks, 1):
+                print(f"{i}. {task}")
+        else:
+            print(f"Задач с приоритетом {target_priority} не найдено.")
+        
+        return found_tasks
+        
 def main():
     task_queue = TaskQueue()
     
